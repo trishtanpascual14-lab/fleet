@@ -1,0 +1,20 @@
+{
+  "name": "smart-fleet-root",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Smart Fleet Distribution Management System - root orchestrator",
+  "scripts": {
+    "dev": "concurrently --kill-others --names \"API,WEB\" --prefix-colors \"cyan,magenta\" \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm --prefix backend run dev",
+    "dev:client": "npm --prefix frontend run dev",
+    "dev:client:host": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "start": "npm run dev",
+    "start:server": "npm --prefix backend start",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview",
+    "install:all": "npm install --prefix backend && npm install --prefix frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
